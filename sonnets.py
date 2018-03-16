@@ -40,7 +40,14 @@ def loop():
             sleep(sleepTime)
             lineCount = 0
 
+        if line == "End of Project Gutenberg's Shakespeare's Sonnets, by William Shakespeare\n":
+            print('ended')
+            return
+
         if line[0] != '#' and line[0]!='\n':
             print(line)
             tweet(api)
             lineCount +=1
+
+if __name__ == '__main__':
+    loop()
