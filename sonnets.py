@@ -24,7 +24,7 @@ def loadSonnets(sonnetsPath):
 
 def tweet(api,line):
     try:
-        api.update(line)
+        api.update_status(line)
         sleep(20)
     except tweepy.TweepError as e:
         print(e.reason)
@@ -46,7 +46,7 @@ def loop():
 
         if line[0] != '#' and line[0]!='\n':
             print(line)
-            tweet(api)
+            tweet(api,line)
             lineCount +=1
 
 if __name__ == '__main__':
