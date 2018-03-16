@@ -37,6 +37,7 @@ def loop():
 
     for line in sonnets:
         if lineCount > 14:
+            tweet(api,"See you tomorrow #Shakespeare #Poetry")
             sleep(sleepTime)
             lineCount = 0
 
@@ -45,7 +46,6 @@ def loop():
             return
 
         if line[0] != '#' and line[0]!='\n':
-            print(line)
             tweet(api,line)
             lineCount +=1
 
